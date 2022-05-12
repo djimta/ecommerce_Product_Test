@@ -1,0 +1,38 @@
+
+body{
+    font-size: 11px; 
+    text-align:left; 
+    color: hsl(228, 45%, 44%); 
+    text-decoration: none;
+    flex-direction: column;
+    width: 1440px;
+}
+
+header{
+
+}
+.navbar-nav{
+    display: flex ;
+    background-color: aqua;
+    justify-content: space-between;
+}
+
+.Left-navbar{
+    display: flex;
+    justify-content: space-between;
+
+    
+    
+}
+.navbar-brand{
+    height: 20;
+}
+
+.navbar-site{
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-item{
+    
+}
