@@ -84,6 +84,7 @@ header{
 .item_content .item_photo_content .item_photo_select{
     padding: 5%;
     margin: auto;
+    
 
 }
 
@@ -96,6 +97,7 @@ header{
 }
 .item_content .item_photo_content .item_photo_select button img{
     border-radius: 5%;
+    cursor: pointer;
     height: 100%;
     width: 100%;  
 }
@@ -190,6 +192,7 @@ header{
     border-style: none;
     height: 100%;
     font-size: 25px;
+    cursor: pointer;
     font-weight: 800;
     border-radius: 10%;
     width: 100%;
@@ -198,6 +201,7 @@ header{
 .item_content .item_description .add_cart_btn {
     align-items: center;
     height: 3em;
+    cursor: pointer;
     width: 13em;
     margin-left: 2%;
     color: white;
