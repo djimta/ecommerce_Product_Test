@@ -113,7 +113,8 @@ header{
 .item_content .item_description .product #product_title {
     font-family: 'Kumbh Sans', sans-serif;
     color: hsl(26, 100%, 55%);
-    font-size: 16px;
+    margin-bottom: 5%;
+    font-size: 15px;
 }
 
 .item_content .item_description .product #product_sub_title{
