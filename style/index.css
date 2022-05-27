@@ -447,6 +447,14 @@ body{
 
 /*----------- responsive -----------*/
 
+@media(max-width:1412px) {
+body{
+    width: 1330px;
+}
+}
+
+
+
 @media(max-width:912px) {
     .nav{
         height: 30%;
