@@ -6,7 +6,10 @@
   <link rel="stylesheet" href="style/index.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<script src="index.js"></script>
+<script src="Photo_Management.js"></script>
+<script src="PopUp_Management.js"></script>
+<script src="cart_Management.js"></script>
+<script src="popUpCart.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
@@ -18,67 +21,129 @@
 </head>
 <body>
 
-  <header>      
-        <a class="navbar_logo" href="#">
-          <img
-            src="images/logo.svg"
-            alt="Sneakers Logo"
-            loading="lazy"
-          />
-        </a>
-        <!--Left Links -->   
-        <nav>
-          <ul class="nav__links">
+  <header> 
+    <div class="nav">
+      <a class="navbar_logo" href="#">
+            <img
+              src="images/logo.svg"
+              alt="Sneakers Logo"
+              loading="lazy"
+            />
+          </a>
+          <!--Left Links -->   
+          <nav class='nav_contener'>
+            <ul class="nav__links">
 
-            <li class="nav-item"><a class="nav-link" href="#">Collection</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Men</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Women</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-        </ul>
-      </nav>
+              <li class="nav-item"><a class="nav-link" href="#">Collection</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Men</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Women</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+          </nav>
 
-      <!--Right element -->
-    <div class= nav__right>
-      <a class="text-reset me-3" href="#">
-        <img
-        src="images/icon-cart.svg"
-        height="20"
-        alt="cart icon"
-        loading="lazy"
-      />
-      </a>
-        <li class="nav-item">
-          <img
-            src="images/image-avatar.png"
-            class="rounded-circle"
-            height="50"
-            alt="Customer Profile Picture"
-            loading="lazy"/>
-        </a>
-        </li>
-    </div>
+        <!--Right element -->
       
+      <div class="right_items">
+      <div class= nav__right_items> 
+        <div class="nav-cart" onclick="OpenCart()">
+
+          <div class="numb-cart">
+                <p id="nums-article">0</p>
+              </div>
+          <div class="cart-icon">
+            <a class="text-reset me-3" href="#">
+                <img
+                src="images/icon-cart.svg"
+                height="25"
+                alt="cart icon"
+                loading="lazy"/>
+              </a>
+          </div>
+
+        </div>  
+          <li class="nav-item">
+            <img
+              src="images/image-avatar.png"
+              class="rounded-circle"
+              height="50"
+              alt="Customer Profile Picture"
+              loading="lazy"/>
+          </a>
+          </li>
+      </div> 
+      <!-- cart PopUp -->
+      <div class="cart-conteneur" >
+              <div class="cart-conteneur-titre" > 
+                <h3>Cart</h3>
+              </div>
+
+              <div class="cart-conteneur-article">
+                <div class="cart-photo-item">
+                  <img src="images/image-product-1-thumbnail.jpg" alt="photo item">
+                </div>
+
+                <div class="cart-conteneur-item">  
+                  <p>Fall Limited Edition Sneakers</p><br>
+                  <p id="price"></p>              
+                </div>
+
+                <div class="cart-conteneur-delete-icon">
+                  <button class="text-reset me-3" href="#">
+                    <img
+                    src="images/icon-delete.svg"
+                    height="25"
+                    alt="cart icon"
+                    loading="lazy"/>
+                  </buttp,>
+                </div>
+              </div>
+
+              <div class="cart-btn-checkout">
+                <button>
+                  Checkout
+                </button>
+              </div>
+
+          </div>
+      </div>
+    </div>     
+          
     
   </header>
   
 <div class="item_content">
   <div class="item_photo_content">
     <div class="item_photo">
-      <img id="item_photo_select" src="images/image-product-1.jpg" alt="Photos sélectionné">
+      <img id="item_photo_select" onclick="openPopUp()" src="images/image-product-1.jpg" alt="Photos sélectionné">
     </div>
     <div class="item_photo_select">
-      <button id="img-1" onclick="ChoosePhoto(1)"> <img src="images/image-product-1-thumbnail.jpg" /></button>
-      <button id="img-2" onclick="ChoosePhoto(2)"> <img src="images/image-product-2-thumbnail.jpg" /></button>
-      <button id="img-3" onclick="ChoosePhoto(3)"> <img src="images/image-product-3-thumbnail.jpg" /></button>
-      <button id="img-4" onclick="ChoosePhoto(4)"> <img src="images/image-product-4-thumbnail.jpg" /></button>
+      <button onclick="ChoosePhoto(1)"> <img id="img-1" src="images/image-product-1-thumbnail.jpg" /></button>
+      <button onclick="ChoosePhoto(2)"> <img id="img-2" src="images/image-product-2-thumbnail.jpg" /></button>
+      <button onclick="ChoosePhoto(3)"> <img id="img-3" src="images/image-product-3-thumbnail.jpg" /></button>
+      <button onclick="ChoosePhoto(4)"> <img id="img-4" src="images/image-product-4-thumbnail.jpg" /></button>
     </div>
 
     <div class="popup-img">
-      <span><img id="icon-close" src="images/icon-close.svg" alt="" srcset=""></span>
-      <img src="images/image-product-1.jpg" alt="Image du popup">
-    </div>
+      <div class="popup-content">
 
+        <div class="icon-close" onclick="closePopUp()">
+          <span>&times;</span>
+        </div>
+      
+        <div class="main-img">
+          <img id="popup_main_img"  src="images/image-product-1.jpg" alt="Image du popup"> 
+        </div> 
+
+        <div class="popup-photo-select">
+          <button  onclick="choosePhotoPopUp(1)"> <img id="pup-img-1" src="images/image-product-1-thumbnail.jpg" /></button>
+          <button  onclick="choosePhotoPopUp(2)"> <img id="pup-img-2" src="images/image-product-2-thumbnail.jpg" /></button>
+          <button  onclick="choosePhotoPopUp(3)"> <img id="pup-img-3" src="images/image-product-3-thumbnail.jpg" /></button>
+          <button  onclick="choosePhotoPopUp(4)"> <img id="pup-img-4" src="images/image-product-4-thumbnail.jpg" /></button>
+        </div>
+      </div>     
+    </div>
+    
     
 
   </div>
@@ -107,7 +172,7 @@
         <p id="count_lbl">0</p>
         <button class="count_cart_btn" id="count_cart_less" onclick="addClick()"><img src="images/icon-plus.svg"   alt="Cart icon"/></button>
       </div>
-      <button class="add_cart_btn"> <img
+      <button class="add_cart_btn" onclick="addCart()"> <img
         src="images/icon-cart.svg"
         height="20"
         alt="Cart icon"
